@@ -1,4 +1,4 @@
 #!/bin/bash
 export JAVA_HOME=/usr/lib/jvm/java-1.8.0
 export PATH=$JAVA_HOME/bin:/bin:/usr/bin:/usr/sbin
-nohup $OPENSHIFT_REPO_DIR/target/universal/stage/bin/my-first-app -J-Xms128M -J-Xmx500M -Dhttp.address=$OPENSHIFT_DIY_IP -Dhttp.port=$OPENSHIFT_DIY_PORT -Dpidfile.path=$OPENSHIFT_REPO_DIR/misc/pid.pid &
+nohup $OPENSHIFT_REPO_DIR/target/universal/stage/bin/my-first-app -J-Xms128M -J-Xmx500M -Dhttp.address=$OPENSHIFT_DIY_IP -Dhttp.port=$OPENSHIFT_DIY_PORT -Dpidfile.path=$OPENSHIFT_DATA_DIR/pid.pid &
