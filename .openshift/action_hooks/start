@@ -1,0 +1,2 @@
+#!/bin/bash
+nohup $OPENSHIFT_REPO_DIR/target/universal/stage/bin/my-first-app -J-Xms128M -J-Xmx500M -Dhttp.address=$OPENSHIFT_DIY_IP -Dhttp.port=$OPENSHIFT_DIY_PORT -Dpidfile.path=$OPENSHIFT_REPO_DIR/misc/pid.pid &
