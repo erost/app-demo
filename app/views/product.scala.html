@@ -1,0 +1,15 @@
+@(product: Product, initialPayload: String)
+
+@main(product.name, initialPayload) {
+    <header><h1>@product.name</h1></header>
+    <main>
+        <h2>Product Description</h2>
+        <p>@product.description</p>
+        <h2>Check other products</h2>
+        <p><a href="/product/@product.prev">Previous Products</a> - <a href="/product/@product.next">Next Products</a></p>
+        <p style="display: none;">this is the non JS version of the page</p>
+    </main>
+    <footer>copyright erost 2015</footer>
+}
+
+

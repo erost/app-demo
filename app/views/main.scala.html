@@ -1,0 +1,33 @@
+@(title: String, initialPayload: String)(content: Html)
+
+<!DOCTYPE html>
+
+<html lang="en" data-ng-app="hera">
+    <head>
+        <title>@title</title>
+        <base href="/">
+        <link rel="stylesheet" media="screen" href="@routes.Assets.versioned("stylesheets/main.css")">
+        <link rel="shortcut icon" type="image/png" href="@routes.Assets.versioned("images/favicon.png")">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.8/angular.min.js" type="text/javascript"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.js" type="text/javascript"></script>
+        <script src="@routes.Assets.versioned("javascripts/app.js")" type="text/javascript"></script>
+    </head>
+    <body>
+        <div data-ui-view>@content</div>
+
+        <script type="text/ng-template" id="components/product/product.html">
+            <header><h1>{{::productCtrl.product.name}}</h1></header>
+            <main>
+                <h2>Product Description</h2>
+                <p>{{::productCtrl.product.description}}</p>
+                <h2>Check other products</h2>
+                <p><a data-ui-sref="product({id: productCtrl.product.prev})">Previous Products</a> - <a data-ui-sref="product({id: productCtrl.product.next})">Next Products</a></p>
+            </main>
+            <footer>copyright erost 2015</footer>
+        </script>
+
+        <script type="application/json" id="hera-initial-data">
+            @Html(initialPayload)
+        </script>
+    </body>
+</html>
