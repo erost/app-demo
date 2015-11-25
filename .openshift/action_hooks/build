@@ -1,3 +1,5 @@
 #!/bin/bash
+export JAVA_HOME=/usr/lib/jvm/java-1.8.0
+export PATH=$JAVA_HOME/bin:/bin:/usr/bin:/usr/sbin
 cd $OPENSHIFT_REPO_DIR
 $OPENSHIFT_REPO_DIR/activator -mem 500 -Duser.home=$OPENSHIFT_DATA_DIR clean stage

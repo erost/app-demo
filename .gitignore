@@ -2,4 +2,4 @@ target
 .idea
 .history
 logs
-project
+project/target
